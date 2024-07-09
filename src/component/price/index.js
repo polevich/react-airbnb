@@ -1,5 +1,6 @@
 import "./index.css"
 import Box from "../box"
+import ListItem from "../list-item"
 
 export default function Price({
 	price,
@@ -26,22 +27,22 @@ export default function Price({
 function List({ currency, cleaning = 0, service = 0, checkin, checkout }) {
 	return (
 		<ul className="price__list">
-			<li className="price__list-item">
+			<ListItem >
 				<span>Плата за уборку:</span>
 				<span>{currency} {cleaning}</span>
-			</li>
-			<li className="price__list-item">
+			</ListItem>
+			<ListItem >
 				<span>Сервисный сбор:</span>
 				<span>{currency} {service}</span>
-			</li>
-			<li className="price__list-item">
+			</ListItem>
+			<ListItem >
 				<span>Дата прибытия:</span>
 				<span>{checkin}</span>
-			</li>
-			<li className="price__list-item">
+			</ListItem>
+			<ListItem >
 				<span>Дата отъезда:</span>
 				<span>{checkout}</span>
-			</li>
+			</ListItem>
 		</ul>
 	)
 }

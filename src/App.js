@@ -3,6 +3,8 @@ import Header from "./component/header"
 import Title from "./component/title";
 import Photo from "./component/photo";
 import Price from "./component/price";
+import RoomList from "./component/room-list";
+import Description from "./component/description";
 
 function App() {
 	const data = {
@@ -171,6 +173,9 @@ function App() {
 				checkin={data.availability.checkin_date}
 				checkout={data.availability.checkout_date}
 			/>
+			<RoomList list={data.roomTypes} />
+			<Description title="Описание" >{data.description}</Description>
+			<Description title="Про соседей" children={data.neighborhood_info} />
 		</Page>
 	);
 }
