@@ -5,6 +5,9 @@ import Photo from "./component/photo";
 import Price from "./component/price";
 import RoomList from "./component/room-list";
 import Description from "./component/description";
+import PropertyDetails from "./component/property-details";
+import Amenities from "./component/amenities";
+import ContactInfo from "./component/contact-info";
 
 function App() {
 	const data = {
@@ -175,8 +178,36 @@ function App() {
 			/>
 			<RoomList list={data.roomTypes} />
 			<Description title="Описание" >{data.description}</Description>
+			<PropertyDetails
+				guests={data.property_details.guests}
+				bedrooms={data.property_details.bedrooms}
+				beds={data.property_details.beds}
+				baths={data.property_details.baths}
+			/>
 			<Description title="Про соседей" children={data.neighborhood_info} />
+			<Amenities
+				hasPool={data.amenities.hasPool}
+				hasGym={data.amenities.hasGym}
+				hasFreeBreakfast={data.amenities.hasFreeBreakfast}
+				hasFreeWiFi={data.amenities.hasFreeWiFi}
+				hasParking={data.amenities.hasParking}
+				hasPetsAllowed={data.amenities.hasPetsAllowed}
+				hasAirportShuttle={data.amenities.hasAirportShuttle}
+				hasConciergeService={data.amenities.hasConciergeService}
+				hasRoomService={data.amenities.hasRoomService}
+				hasChildFriendly={data.amenities.hasChildFriendly}
+			/>
+			<ContactInfo
+				name={data.contact_info.name}
+				image={data.contact_info.image}
+				rate={data.contact_info.response_rate}
+				time={data.contact_info.response_time}
+				info={data.contact_info.info}
+				phone={data.contact_info.phone}
+			/>
 		</Page>
+
+
 	);
 }
 
