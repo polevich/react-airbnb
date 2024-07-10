@@ -11,7 +11,7 @@ export default function PropertyDetails({ guests, bedrooms, beds, baths, }) {
 	return (
 		<Box>
 
-			<ul className="price__list">
+			<ul className="property__list">
 				<ListItem >
 					<Heading>Детали свойства:</Heading>
 				</ListItem>

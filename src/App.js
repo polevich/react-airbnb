@@ -8,6 +8,9 @@ import Description from "./component/description";
 import PropertyDetails from "./component/property-details";
 import Amenities from "./component/amenities";
 import ContactInfo from "./component/contact-info";
+import AdditionalProperties from "./component/additional-properties";
+import GuestReviews from "./component/guest-reviews";
+import NearbyAttractions from "./component/nearby-attractions";
 
 function App() {
 	const data = {
@@ -89,22 +92,22 @@ function App() {
 			name: "Kerthy",
 			image: "https://picsum.photos/80/80",
 			response_rate: 100,
-			response_time: "within an hour",
-			info: "I'm an Austin-Brooklyn filmmaker and television producer who can be found biking to the Farmer's Market...",
+			response_time: "На протяжении часа",
+			info: "Я кинорежисерка и телевизионный продюсер Остина-Бруклина, которого можна найти на велосипеде к Фермерскому рынку...",
 			phone: "+123-456-7890",
 		},
 
 		additional_properties: {
 			house_rules:
-				"No smoking or pets allowed. Quiet hours from 10:00 PM to 7:00 AM.",
+				"Паління та домашні тварини заборонені. Тиша з 22:00 до 7:00",
 			cancellation_policy:
-				"Flexible cancellation policy with full refund if canceled 7 days before check-in.",
+				"Гнучка політика скасування з повним поверненням коштів у разі скасування за 7 днів до заїзду.",
 			local_transportation:
-				"Public buses and taxis available within walking distance.",
-			host_languages: ["English", "Spanish"],
-			special_offers: "10% discount for bookings of 7 nights or more.",
-			"check-in_instructions":
-				"Check-in time is 3:00 PM. Please contact us in advance with your estimated arrival time.",
+				"Громадські автобуси та таксі в межах пішої досяжності.",
+			host_languages: ["Английский", "Испанский"],
+			special_offers: "Знижка 10% при бронюванні від 7 ночей",
+			checkin_instructions:
+				"Час реєстрації - 15:00. Будь ласка, зв'яжіться з нами заздалегідь, повідомте орієнтовний час свого прибуття.",
 		},
 
 		guestReviews: [
@@ -205,6 +208,16 @@ function App() {
 				info={data.contact_info.info}
 				phone={data.contact_info.phone}
 			/>
+			<AdditionalProperties
+				houseRules={data.additional_properties.house_rules}
+				cancellationPolicy={data.additional_properties.cancellation_policy}
+				localTransportation={data.additional_properties.local_transportation}
+				hostLanguages={data.additional_properties.host_languages}
+				specialOffers={data.additional_properties.special_offers}
+				checkinInstructions={data.additional_properties.checkin_instructions}
+			/>
+			<GuestReviews list={data.guestReviews} />
+			<NearbyAttractions list={data.nearbyAttractions} />
 		</Page>
 
 

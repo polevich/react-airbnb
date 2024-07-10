@@ -29,7 +29,7 @@ export default function Amenities({
 	return (
 		<Box>
 
-			<ul className="price__list">
+			<ul className="amenities__list">
 				<ListItem >
 					<Heading>Удобства:</Heading>
 				</ListItem>
