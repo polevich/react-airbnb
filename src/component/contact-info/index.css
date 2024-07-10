@@ -1,28 +1,45 @@
-.title {
+.contact {
 	display: flex;
 	flex-direction: column;
+	gap: 28px;
+}
+
+.contact__first {
+	display: flex;
 	gap: 20px;
 }
 
-.title__text {
+.contact__two {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.contact__photo {
+	max-width: 80px;
+	max-height: 80px;
+	border-radius: 50%;
+}
+
+.contact__text {
 	font-weight: 700;
 	font-size: 32px;
 	line-height: 120%;
 	color: #000;
 }
 
-.title__sub-block {
+.contact__sub-block {
 	display: flex;
 	gap: 16px;
 }
 
-.title__sub-value {
+.contact__sub-value {
 	display: flex;
 	gap: 16px;
 	align-items: center;
 }
 
-.title__sub-value:not(:last-child)::after{
+.contact__sub-value:not(:last-child)::after{
 	content: "";
 	display: block;
 	height: 4px;

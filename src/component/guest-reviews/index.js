@@ -5,10 +5,10 @@ import "./index.css"
 
 export default function GuestReviews({ list }) {
 	return (
-		<div className="room__block">
-			<Heading border>Відгуки клієнтів</Heading>
+		<div className="guest__block">
+			<Heading>Відгуки клієнтів</Heading>
 
-			<div className="room__list">
+			<div className="guest__list">
 				{list.map(({ id, ...rest }) => (
 					<Fragment key={id}>
 						<Item {...rest} />
@@ -21,10 +21,13 @@ export default function GuestReviews({ list }) {
 
 function Item({ guestName, rating, review }) {
 	return (
-		<Box className="room">
-			<span className="room__title">{guestName}</span>
-			<span className="room__info">Рейтинг: {rating}</span>
-			<span className="room__price">{review}</span>
+		<Box className="guest">
+			<div className="guest__up">
+				<span className="guest__title">{guestName}</span>
+				<span className="guest__rating">Рейтинг: {rating}</span>
+			</div>
+
+			<span className="guest__description">{review}</span>
 		</Box>
 	)
 }
